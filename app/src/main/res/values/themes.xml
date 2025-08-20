@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/spotify_dark_gray</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.MusicApp</item>
+    </style>
 
-    <style name="Theme.MusicApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.MusicApp" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
 </resources>

@@ -35,7 +35,7 @@ class MusicPlayerViewModel(private val application: Application) : AndroidViewMo
     init {
         fetchSongs()
 
-        // 【核心修复】监听当前歌曲的变化，自动获取新歌词
+        // 监听当前歌曲的变化，自动获取新歌词
         viewModelScope.launch {
             currentSong.collect { song ->
                 song?.let { fetchLyrics(it.lyricsUrl) }
@@ -68,7 +68,6 @@ class MusicPlayerViewModel(private val application: Application) : AndroidViewMo
             putExtra("SONG_ID", song.id)
         }
         application.startService(intent)
-        // fetchLyrics 的调用已移至 init 的监听器中，此处不再需要
     }
 
     private fun fetchLyrics(lyricsUrl: String?) {
